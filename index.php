@@ -31,14 +31,11 @@ if($stmt){
 
         array_push($array['data'],$pizzas);
     }
-x
     echo json_encode($array);
-    
-
 }else
 {
     echo json_encode(
-        array('message'=>'No Pizza here')
+        array('message'=>'no data is here')
     );
 }
 
