@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
+$serverName = "localhost";
 $username = "Amine";
 $password = "teste123";
-$conn =new PDO("mysql:host=$servername;dbname=pizzas", $username, $password);
+$conn =new PDO("mysql:host=$serverName;dbname=pizzas", $username, $password);
 
 
 $query = "SELECT * FROM pizza ";
