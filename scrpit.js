@@ -26,7 +26,7 @@
 // })
 
 
-let url  = "https://restcountries.com/v3.1/name/peru";
+let url  = "http://localhost:3000/exemple_API/API/read_Single.php?id=2";
 
 // function fetchData(callback){
 //     fetch(url)

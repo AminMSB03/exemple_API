@@ -1,25 +1,28 @@
 <?php
-$serverName = "localhost";
-$username = "Amine";
-$password = "teste123";
-$conn =new PDO("mysql:host=$serverName;dbname=pizzas", $username, $password);
+header("Access-Control-Allow-Origin: * ");
+header("Content-Type: application/json; charset=UTF-8 ");
+header("Access-Control-Allow-Methods: * ");
+header("Access-Control-Allow-Max-Age: 3600 ");
+header("Access-Control-Allow-Headers: * ");
+
+require_once '../models/Pizzas.php';
+
+$posts = new Posts();
+$results = $posts->getAllPizzas();
 
 
-$query = "SELECT * FROM pizza ";
-$stmt = $conn->prepare($query);
-$stmt->execute();
 
 // echo "<pre>";
 // print_r($result);
 // echo "</pre>";
 
-if($stmt){
+if($results){
 
 
     $array = array();
     $array['data'] = array();
 
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    while($row = $results->fetch(PDO::FETCH_ASSOC)){
         extract($row);
         
         $pizzas = array(
